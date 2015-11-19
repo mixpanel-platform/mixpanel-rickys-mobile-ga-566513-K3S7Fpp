@@ -10,6 +10,15 @@
     <h1>Hello, World!</h1>
     <script>
       // Run queries and display results here
+      MP.api.segment('In-App Purchase', 'properties["Revenue"], {from: moment().subtract(1, 'days'), method: 'sum'}).done(function(results) {
+    console.log(results.values());
+});
+      
+      
+      $(document).ready(function() {
+    var barChart = $('<div></div>').appendTo('body').MPChart({chartType: 'bar'});    // Create a bar chart
+    barChart.MPChart('setData', data);                                               // Set the chart's data
+});
     </script>
   </body>
 </html>
